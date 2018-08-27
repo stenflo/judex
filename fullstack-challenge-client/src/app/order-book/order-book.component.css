@@ -1,0 +1,17 @@
+.orderbook-table-row {
+    display: table-row;
+}
+.orderbook-table-cell {
+    display: table-cell;
+    font-size: 8pt;
+    padding-right: 5px;
+}
+.colspan {
+  display: block;
+  overflow: hidden;
+  width: 495px;
+  position: absolute;
+  opacity: 0.2;
+  margin-top: -14px;
+  margin-left: -500px;
+}

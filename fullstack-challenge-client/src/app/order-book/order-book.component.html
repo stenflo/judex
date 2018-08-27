@@ -1,0 +1,108 @@
+<div style="background-color:lightgreen">
+    <h2>Fullstack Code Challenge</h2>
+    Click <a href="https://github.com/stenflo/fullstack-challenge">HERE</a> for source code and documentation.<br/>
+    Select your market:
+    <select [(ngModel)]="selectedMarket">
+        <option *ngFor="let m of availableMarkets" [ngValue]="m">{{m}}</option>
+    </select>
+    <i class="fas fa-cog" (click)="mode='config'"></i>
+    <i class="fas fa-question-circle" (click)="mode='help'"></i>
+</div>
+<div *ngIf="mode && mode === 'config'">
+    Exchange #1: <select [(ngModel)]="exchange1">
+        <option *ngFor="let e of availableExchanges" [ngValue]="e">{{e}}</option>
+    </select><br/>
+    Exchange #2: <select [(ngModel)]="exchange2">
+        <option *ngFor="let e of availableExchanges" [ngValue]="e">{{e}}</option>
+    </select><br/>
+    <button (click)="mode=undefined">save</button>
+</div>
+<div *ngIf="mode && mode === 'help'" style="width:600px">
+    <p>This tool aims to find arbitrages by comparing order books
+        from two different exchanges. Select a market and see order
+        books from two exchanges combined. Watch closely around the
+        intersection of asks and bids. When cross-exchange arbitrage
+        opportunities are identified the cells will be hilighted yellow
+        or green. Be patient, it's like watching for shooting starts.</p>
+    <p>This software was written by <a href="https://github.com/stenflo">Erik Stenflo</a>
+        in response to a coding challenge. This software is open source and
+        free to use. Enjoy!</p>
+    <br/>
+    <button (click)="mode=undefined">back</button>
+</div>
+<div *ngIf="!mode || mode === 'default'">
+<div *ngIf="!orderBook">
+    Loading Order Book...
+</div>
+<div *ngIf="orderBook">
+    <div>Market: {{orderBook.info.market}}</div>
+    <div>Date: {{orderBook.info.date}}</div>
+</div>
+<div *ngIf="orderBook" style="display:table">
+    <div class="orderbook-table-row">
+        <div class="orderbook-table-cell" style="color: red">Price({{orderBook.info.token1}})</div>
+        <div class="orderbook-table-cell" style="color: purple">{{orderBook.info.exchange1}}({{orderBook.info.token2}})</div>
+        <div class="orderbook-table-cell" style="color: blue">{{orderBook.info.exchange2}}({{orderBook.info.token2}})</div>
+        <div class="orderbook-table-cell">Total({{orderBook.info.token2}})</div>
+        <div class="orderbook-table-cell"></div>
+    </div>
+    <div *ngFor="let price of askPricePoints" class="orderbook-table-row">
+        <div class="orderbook-table-cell" [style.background-color]="exchange1Arbitrage(price) + exchange2Arbitrage(price) > 0 ? 'yellow' : none" style="color: red">{{price}}</div>
+        <div class="orderbook-table-cell" [style.background-color]="exchange2Arbitrage(price) > 0 ? 'yellow' : isBelowHighestBid(price) && orderBook.asks[price].exchange1 > 0 ? 'lawngreen' : none" style="color:purple">{{orderBook.asks[price].exchange1}}</div>
+        <div class="orderbook-table-cell" [style.background-color]="exchange1Arbitrage(price) > 0 ? 'yellow' : isBelowHighestBid(price) && orderBook.asks[price].exchange2 > 0 ? 'lawngreen' : none" style="color: blue">{{orderBook.asks[price].exchange2}}</div>
+        <div class="orderbook-table-cell">{{orderBook.asks[price].exchange1+orderBook.asks[price].exchange2}}</div>
+        <div class="orderbook-table-cell">
+            <div
+                [style.opacity]="(orderBook.asks[price].exchange1 == 0) ? 0 : 1"
+                style="color: purple; display: inline; padding-right: 2px">&#8226;</div>
+            <div
+                [style.opacity]="(orderBook.asks[price].exchange2 == 0) ? 0 : 1"
+                style="color: blue; display: inline; padding-right: 5px">&#8226;</div>
+        </div>
+        <div class="colspan">
+            <div [style.width.%]="extraSellWidth(price)"
+            style="height: 16px; display:inline-block; background-color: white"></div>
+            <div [style.width.%]="exchange1SellWidth(price)"
+            style="height: 16px; display:inline-block; background-color: purple"></div>
+            <div [style.width.%]="exchange2SellWidth(price)"
+            style="height: 16px; display:inline-block; background-color: blue"></div>
+        </div>
+    </div>
+    <div class="orderbook-table-row">
+        <div class="orderbook-table-cell" style="color: red">&#9650;<span style="font-weight: bold">ASK</span></div>
+        <div class="orderbook-table-cell"></div>
+        <div class="orderbook-table-cell"></div>
+        <div class="orderbook-table-cell"></div>
+        <div class="orderbook-table-cell"></div>
+    </div>
+    <div class="orderbook-table-row">
+        <div class="orderbook-table-cell" style="color: green">&#9660;<span style="font-weight: bold">BID</span></div>
+        <div class="orderbook-table-cell"></div>
+        <div class="orderbook-table-cell"></div>
+        <div class="orderbook-table-cell"></div>
+        <div class="orderbook-table-cell"></div>
+    </div>
+    <div *ngFor="let price of bidPricePoints" class="orderbook-table-row">
+        <div class="orderbook-table-cell" [style.background-color]="exchange1Arbitrage(price) + exchange2Arbitrage(price) > 0 ? 'yellow' : none" style="color: green">{{price}}</div>
+        <div class="orderbook-table-cell" [style.background-color]="exchange1Arbitrage(price) > 0 ? 'yellow' : isAboveLowestAsk(price) && orderBook.bids[price].exchange1 > 0 ? 'lawngreen' : none" style="color: purple">{{orderBook.bids[price].exchange1}}</div>
+        <div class="orderbook-table-cell" [style.background-color]="exchange2Arbitrage(price) > 0 ? 'yellow' : isAboveLowestAsk(price) && orderBook.bids[price].exchange2 > 0 ? 'lawngreen' : none" style="color: blue">{{orderBook.bids[price].exchange2}}</div>
+        <div class="orderbook-table-cell">{{orderBook.bids[price].exchange1+orderBook.bids[price].exchange2}}</div>
+        <div class="orderbook-table-cell">
+            <div
+                [style.opacity]="(orderBook.bids[price].exchange1 == 0) ? 0 : 1"
+                style="color: purple; display: inline; padding-right: 2px">&#8226;</div>
+            <div
+                [style.opacity]="(orderBook.bids[price].exchange2 == 0) ? 0 : 1"
+                style="color: blue; display: inline; padding-right: 5px">&#8226;</div>
+        </div>
+        <div class="colspan">
+            <div [style.width.%]="extraBuyWidth(price)"
+            style="height: 16px; display:inline-block; background-color: white"></div>
+            <div [style.width.%]="exchange1BuyWidth(price)"
+            style="height: 16px; display:inline-block; background-color: purple"></div>
+            <div [style.width.%]="exchange2BuyWidth(price)"
+            style="height: 16px; display:inline-block; background-color: blue"></div>
+        </div>
+    </div>
+</div>
+</div>
