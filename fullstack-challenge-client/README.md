@@ -31,4 +31,4 @@ While you have both server and the client running in two seperate consoles you c
 
 http://localhost:8081
 
-Note: The client will attempt to connect with the server. You can configure the client settings (see *[src/app/AppSettings.ts](./src/app/app.settings.ts)*). The client will otherwise try to connect with the server at it's default location (localhost:3030).
+Note: The client will attempt to connect with the server. You can configure the client settings (see *[src/app/app.settings.ts](./src/app/app.settings.ts)*). The client will otherwise try to connect with the server at it's default location (localhost:3030).
