@@ -16,16 +16,15 @@ $ npm install
 
 ### To run the client application:
 
-First you need to have the server application running. (see *[fullstack-challenge-server](../fullstack-challenge-server)*)
-
-While the server is running in one console window, open another console window and start the client.
+Start the client.
 
 ```sh
-$ cd fullstack-challenge-client
 $ npm run dev-server
 ```
 
 This will start the "development server" on port 8081 for the client application. (The port is specified in package.json if you want to change it.)
+
+You also need to have the server application running. (see *[fullstack-challenge-server](../fullstack-challenge-server)*) If you don't already have the server running, open another console window and start the server, so you have both client and server running side by side.
 
 While you have both server and the client running in two seperate consoles you can access the client application in your browser with the following url:
 
