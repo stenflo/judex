@@ -22,6 +22,7 @@ Build a combined order book that takes the full order books from Bittrex and Pol
 * The client module provides the user interface components that can be loaded into a web browser.
 * The client module depends on the server module to provide the data.
 * This solution provides all the challenge requirements while demonstrating a typical web architecture consisting of client-side and server-side components.
+* A live demo of the application is available *[HERE](http://erik.olof.stenflo.org)*.
 
 ### Installation:
 First clone the git repository and go to the project directory.
