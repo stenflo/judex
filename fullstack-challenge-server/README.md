@@ -7,7 +7,7 @@
 
 ### To build from source:
 
-Go to the project directory and install package dependencies with NPM. Also, provide the `.env` file, based on the example file included.
+Go to the fullstack-challenge-server directory and install package dependencies with NPM. Also, provide the `.env` file, based on the example file included.
 
 ```sh
 $ cd fullstack-challenge-server

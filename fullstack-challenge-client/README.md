@@ -7,7 +7,7 @@
 
 ### To build from source:
 
-Go to the project directory and install package dependencies with NPM.
+Go to the fullstack-challenge-client directory and install package dependencies with NPM.
 
 ```sh
 $ cd fullstack-challenge-client

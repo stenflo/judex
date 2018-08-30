@@ -24,7 +24,13 @@ Build a combined order book that takes the full order books from Bittrex and Pol
 * This solution provides all the challenge requirements while demonstrating a typical web architecture consisting of client-side and server-side components.
 
 ### Installation:
-Please see the documentation for each of these modules, to build them from source:
+First clone the git repository and go to the project directory.
+```sh
+$ git clone https://github.com/stenflo/fullstack-challenge.git
+$ cd fullstack-challenge
+```
+
+Within this project there are two modules. Please see the documentation for each of these modules, to build them from source and run them side by side.
 * *[fullstack-challenge-client](./fullstack-challenge-client)*
 * *[fullstack-challenge-server](./fullstack-challenge-server)*
 
