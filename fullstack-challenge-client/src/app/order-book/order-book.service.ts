@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Rx';
-import { OrderBook } from '../models/order-book';
+import { AppSettings } from '../app.settings';
 
 @Injectable()
 export class OrderBookService {
@@ -15,7 +15,7 @@ export class OrderBookService {
         if (exch1) p = p.set('exch1', exch1);
         if (exch2) p = p.set('exch2', exch2);
         const options = { params: p };
-        return this.http.get<any>(`http://localhost:3030/api/v1/market/${market}/orderbook`, options);
+        return this.http.get<any>(`${AppSettings.API_ENDPOINT}/api/v1/market/${market}/orderbook`, options);
     }
 
 }
