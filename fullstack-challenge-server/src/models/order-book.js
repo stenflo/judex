@@ -1,7 +1,6 @@
 const axios = require('axios');
 
-const _ = require('underscore');
-
+import _ from "lodash";
 import BittrexDAO from "./bittrex";
 import PoloniexDAO from "./poloniex";
 
