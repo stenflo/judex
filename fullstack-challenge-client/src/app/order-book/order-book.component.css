@@ -5,13 +5,23 @@
     display: table-cell;
     font-size: 8pt;
     padding-right: 5px;
+    padding-left: 4px;
+    overflow: hidden;
 }
 .colspan {
-  display: block;
-  overflow: hidden;
-  width: 495px;
-  position: absolute;
-  opacity: 0.2;
-  margin-top: -14px;
-  margin-left: -500px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    opacity: 0.2;
+    margin-top: -4px;
+    margin-left: -290px;
+    text-align: right;
+}
+.colspan div {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.orderbook-table-cell, .colspan div {
+    height: 17px;
 }

@@ -17,7 +17,7 @@
     </select><br/>
     <button (click)="mode=undefined">save</button>
 </div>
-<div *ngIf="mode && mode === 'help'" style="width:600px">
+<div *ngIf="mode && mode === 'help'" style="width:400px; font-size: 8pt">
     <p>This tool aims to find arbitrages by comparing order books
         from two different exchanges. Select a market and see order
         books from two exchanges combined. Watch closely around the
@@ -61,11 +61,11 @@
         </div>
         <div class="colspan">
             <div [style.width.%]="extraSellWidth(price)"
-            style="height: 16px; display:inline-block; background-color: white"></div>
+            style="background-color: white"></div>
             <div [style.width.%]="exchange1SellWidth(price)"
-            style="height: 16px; display:inline-block; background-color: purple"></div>
+            style="background-color: purple"></div>
             <div [style.width.%]="exchange2SellWidth(price)"
-            style="height: 16px; display:inline-block; background-color: blue"></div>
+            style="background-color: blue"></div>
         </div>
     </div>
     <div class="orderbook-table-row">
@@ -97,11 +97,11 @@
         </div>
         <div class="colspan">
             <div [style.width.%]="extraBuyWidth(price)"
-            style="height: 16px; display:inline-block; background-color: white"></div>
+            style="background-color: white"></div>
             <div [style.width.%]="exchange1BuyWidth(price)"
-            style="height: 16px; display:inline-block; background-color: purple"></div>
+            style="background-color: purple"></div>
             <div [style.width.%]="exchange2BuyWidth(price)"
-            style="height: 16px; display:inline-block; background-color: blue"></div>
+            style="background-color: blue"></div>
         </div>
     </div>
 </div>
