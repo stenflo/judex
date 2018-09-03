@@ -2,12 +2,13 @@
 
 This challenge has been reappropriated...
 
-### JUDEX
-The concept of Judex is a third-level agent. While a general referee or arbitrator is considered a second-level agent, such refree may appoint another agent for a dispute. The name JUDEX was chosen for the project because the main purpose is to identify arbitration tribunal between two different second-level agents. The Judex application allows you to monitor the combined order books from two different crypto exchanges in realtime to assist in the identification of cross-exchange arbirage opportunities. The application refreshes the combined order books on a one-second interval and provides visual indicators when arbitrage opportunities arise, illustrating liquidity potential.
+### Judex v1.0
+JUDEX is a cross-exchange market analyzer. The JUDEX application allows you to monitor the order books from multiple crypto exchanges and identify cross-exchange arbitrages (i.e. bids on one exchange overlap with asks on another). The application refreshes the order books on regular intervals and provides visual indicators when cross-exchange arbitrage events occur for a given crypto market. Consider a typical exchange that facilitates trades between individual parties A and B, it can be described as a third-party, or an arbitrator for trades. Therefore JUDEX is best understood as an agent to the arbitrator, a fourth-party, a utility for analyzing liquidity potential spanning multiple exchanges and an agent for reconciling arbitration tribunals bewteen sperately arbirated realms.
 
 The definition of JUDEX (Merriam-Webster dictionary):
-1 : a private person appointed in Roman law to hear and determine a case and corresponding most nearly to a modern referee or arbitrator appointed by the court.
-2: JUDGE
+> 1 : a private person appointed in Roman law to hear and determine a case and corresponding most nearly to a modern referee or arbitrator appointed by the court.
+> 2: JUDGE
+
 *JUDEX, JUDI′CIUM.* A Roman magistratus generally did not investigate the facts in dispute in such matters as were brought before him: he appointed a Judex for that purpose, and gave him instructions. *[[Actio, Interdictum.]](http://penelope.uchicago.edu/Thayer/E/Roman/Texts/secondary/SMIGRA*/Judex.html)*
 
 ### The Original Challenge:
@@ -22,7 +23,7 @@ Build a combined order book that takes the full order books from Bittrex and Pol
 ### Extra points for:
 * More exchanges
 * Allow user to switch to different markets (the BTC_DOGE market for example)
-* Highlight if the books overlap (ie bids on Bittrex overlap with asks on Poloniex)
+* Highlight if the books overlap (i.e. bids on Bittrex overlap with asks on Poloniex)
 * Actively updating the combined order book based on actual trades from the exchanges
 * Unit Tests
 
@@ -32,7 +33,7 @@ Build a combined order book that takes the full order books from Bittrex and Pol
 * The client module provides the user interface components that can be loaded into a web browser.
 * This solution provides all the challenge requirements while demonstrating a typical web architecture consisting of client-side and server-side components.
 * The solution is intentionally simple, for demonstration purposes.
-* A live demo of the application is available *[HERE](http://erik.olof.stenflo.org)*.
+* A live demo of the application is available *[HERE](http://judex.exchange)*.
 
 ### Installation:
 First clone the git repository and go to the project directory.
@@ -45,8 +46,8 @@ Within this project there are two modules. Please see the documentation for each
 * *[fullstack-challenge-client](./fullstack-challenge-client)*
 * *[fullstack-challenge-server](./fullstack-challenge-server)*
 
-### Arbirage Identification:
-The JUDEX application will highlight the price points where order books overlap (ie bids on Bittrex overlap with asks on Poloniex). Such events happen only on occasion, so one must be patient to see them occur. Additional markets are provided to scout for such arbitrages. A select box allows you to flip between them. A preferences page allows you to choose exchanges to pair.
+### Arbitrage Identification:
+The JUDEX application will highlight the price points where order books overlap (i.e. bids on Bittrex overlap with asks on Poloniex). Such events happen only on occasion, so one must be patient to see them occur. Additional markets are provided to scout for such arbitrages. A select box allows you to flip between them. A preferences page allows you to choose exchanges to pair.
 
 Happy Scouting!
 
