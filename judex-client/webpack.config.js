@@ -9,7 +9,7 @@ else {
   process.env.ENV = process.env.NODE_ENV = 'development';
 }
 
-console.log("Building Fullstack Challenge Module [mode: " + process.env.NODE_ENV + "] [" + __dirname + "]");
+console.log("Building Judex Module [mode: " + process.env.NODE_ENV + "] [" + __dirname + "]");
 
 module.exports = (env, argv) => {
   console.log('using mode', argv.mode);
@@ -17,7 +17,7 @@ module.exports = (env, argv) => {
     entry: './src/app/main.ts',
     output: {
       path: path.resolve(__dirname, './dist'),
-      filename: 'FullstackChallenge.js'
+      filename: 'judex.js'
     },
     module: {
       rules: [

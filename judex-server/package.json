@@ -1,10 +1,10 @@
 {
-    "name": "fullstack-challenge-server",
+    "name": "judex-server",
     "version": "1.0.0",
-    "description": "Fullstack Challenge Server Module",
+    "description": "Judex Server Module",
     "repository": {
         "type": "git",
-        "url": "https://github.com/stenflo/fullstack-challenge.git"
+        "url": "https://github.com/stenflo/judex.git"
     },
     "main": "app.js",
     "scripts": {

@@ -1,8 +1,5 @@
-# Code Challenge
+# Judex v1.0
 
-This challenge has been reappropriated...
-
-### Judex v1.0
 JUDEX is a cross-exchange market analyzer. The JUDEX application allows you to monitor the order books from multiple crypto exchanges and identify cross-exchange arbitrages (i.e. bids on one exchange overlap with asks on another). The application refreshes the order books on regular intervals and provides visual indicators when cross-exchange arbitrage events occur for a given crypto market. Consider a typical exchange that facilitates trades between individual parties A and B, it can be described as a third-party, or an arbitrator for trades. Therefore JUDEX is best understood as an agent to the arbitrator, a fourth-party, a utility for analyzing liquidity potential spanning multiple exchanges and an agent for reconciling arbitration tribunals bewteen sperately arbirated realms.
 
 The definition of JUDEX (Merriam-Webster dictionary):
@@ -28,7 +25,7 @@ Build a combined order book that takes the full order books from Bittrex and Pol
 * Unit Tests
 
 ### Challenge Solution:
-* The solution provided consists of two modules, the *[client](./fullstack-challenge-client)* and the *[server](./fullstack-challenge-server)*. The source code is provided to build each of these from source with NPM (Node Package Manager).
+* The solution provided consists of two modules, the *[client](./judex-client)* and the *[server](./judex-server)*. The source code is provided to build each of these from source with NPM (Node Package Manager).
 * The server module provides the aggregated order book data from multiple exchanges.
 * The client module provides the user interface components that can be loaded into a web browser.
 * This solution provides all the challenge requirements while demonstrating a typical web architecture consisting of client-side and server-side components.
@@ -38,13 +35,13 @@ Build a combined order book that takes the full order books from Bittrex and Pol
 ### Installation:
 First clone the git repository and go to the project directory.
 ```sh
-$ git clone https://github.com/stenflo/fullstack-challenge.git
-$ cd fullstack-challenge
+$ git clone https://github.com/stenflo/judex.git
+$ cd judex
 ```
 
 Within this project there are two modules. Please see the documentation for each of these modules, to build them from source and run them side by side.
-* *[fullstack-challenge-client](./fullstack-challenge-client)*
-* *[fullstack-challenge-server](./fullstack-challenge-server)*
+* *[judex-client](./judex-client)*
+* *[judex-server](./judex-server)*
 
 ### Arbitrage Identification:
 The JUDEX application will highlight the price points where order books overlap (i.e. bids on Bittrex overlap with asks on Poloniex). Such events happen only on occasion, so one must be patient to see them occur. Additional markets are provided to scout for such arbitrages. A select box allows you to flip between them. A preferences page allows you to choose exchanges to pair.

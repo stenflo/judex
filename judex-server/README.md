@@ -1,4 +1,4 @@
-# fullstack-challenge-server
+# judex-server
 
 ### Pre-requisites:
 
@@ -7,10 +7,10 @@
 
 ### To build from source:
 
-Go to the fullstack-challenge-server directory and install package dependencies with NPM. Also, provide the `.env` file, based on the example file included.
+Go to the judex-server directory and install package dependencies with NPM. Also, provide the `.env` file, based on the example file included.
 
 ```sh
-$ cd fullstack-challenge-server
+$ cd judex-server
 $ npm install
 $ cp .env.example .env
 ```
@@ -29,4 +29,4 @@ http://localhost:3030/api/v1/market/btc_eth/orderbook
 
  (If you changed the host or the port in the `.env` file, please change the URL accordingly.)
 
-Note: This URL will only let you see the raw data in JSON format. To see the user interface display of the data you must run the *[client](../fullstack-challenge-client)* application.
+Note: This URL will only let you see the raw data in JSON format. To see the user interface display of the data you must run the *[client](../judex-client)* application.

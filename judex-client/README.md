@@ -1,16 +1,16 @@
-# fullstack-challenge-client
+# judex-client
 
 ### Pre-requisites:
 
 * NPM (Node Package Manager)
-* fullstack-challenge-server
+* judex-server
 
 ### To build from source:
 
-Go to the fullstack-challenge-client directory and install package dependencies with NPM.
+Go to the judex-client directory and install package dependencies with NPM.
 
 ```sh
-$ cd fullstack-challenge-client
+$ cd judex-client
 $ npm install
 ```
 
@@ -24,7 +24,7 @@ $ npm run dev-server
 
 This will start the "development server" on port 8081 for the client application. (The port is specified in package.json if you want to change it.)
 
-You also need to have the server application running. (see *[fullstack-challenge-server](../fullstack-challenge-server)*) If you don't already have the server running, open another console window and start the server, so you have both client and server running side by side.
+You also need to have the server application running. (see *[judex-server](../judex-server)*) If you don't already have the server running, open another console window and start the server, so you have both client and server running side by side.
 
 While you have both server and the client running in two seperate consoles you can access the client application in your browser with the following url:
 
