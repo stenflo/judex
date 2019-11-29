@@ -12,7 +12,7 @@
     "url": "https://github.com/stenflo/judex.git"
   },
   "scripts": {
-    "build": "ng build",
+    "build": "ng build --prod",
     "start": "ng serve"
   },
   "engines": {

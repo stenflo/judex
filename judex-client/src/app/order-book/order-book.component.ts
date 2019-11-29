@@ -4,27 +4,27 @@ import { OrderBookService } from './order-book.service';
 
 @Component({
   selector: 'order-book',
-  template: require('./order-book.component.html'),
+  templateUrl: './order-book.component.html',
   styles: [ require('./order-book.component.css') ]
 })
 export class OrderBookComponent implements OnInit {
 
-  private mode: string;
+  public mode: string;
   private orderBook: OrderBook;
   private bidPeak: number = 0;
   private askPeak: number = 0;
-  private selectedMarket: string = 'BTC-ETH';
+  public selectedMarket: string = 'BTC-ETH';
   private exchange1: string = 'Bittrex';
   private exchange2: string = 'Poloniex';
   private lowestAsk: string;
   private highestBid: string;
   private pageSize: number = 20;
 
-  private availableExchanges: string[] = [
+  public availableExchanges: string[] = [
     'Bittrex',
     'Poloniex'
   ];
-  private availableMarkets: string[] = [
+  public availableMarkets: string[] = [
     'BTC-ETH',
     'BTC-DOGE',
     'BTC-LSK',
