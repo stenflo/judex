@@ -5,7 +5,7 @@ import { OrderBookService } from './order-book.service';
 @Component({
   selector: 'order-book',
   templateUrl: './order-book.component.html',
-  styles: [ require('./order-book.component.css') ]
+  styleUrls: ['./order-book.component.css']
 })
 export class OrderBookComponent implements OnInit {
 
