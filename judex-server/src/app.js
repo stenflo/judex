@@ -1,4 +1,3 @@
-import dotenv from "dotenv/config";
 import BodyParser from "koa-bodyparser";
 import Koa from "koa";
 import Logger from "koa-logger";
@@ -6,6 +5,7 @@ import router from "./routes";
 
 const app = new Koa();
 const cors = require("@koa/cors");
+require("dotenv").config();
 
 app.use(function(ctx, next) {
     return next().catch(err => {
