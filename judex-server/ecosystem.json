@@ -2,7 +2,7 @@
     "apps" : [{
         "name": "judex",
         "script": "src/app.js",
-        "interpreter": "babel",
+        "interpreter": "babel-node",
         "watch": false,
         "cwd": "./",
         "env": {
