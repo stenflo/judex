@@ -2,7 +2,7 @@
     "apps" : [{
         "name": "judex",
         "script": "src/app.js",
-        "watch": true,
+        "watch": false,
         "cwd": "./",
         "env": {
             "NODE_ENV": "development"
