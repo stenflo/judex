@@ -25,7 +25,7 @@
         "koa": "^2.11.0",
         "koa-bodyparser": "^4.2.1",
         "koa-compose": "^4.1.0",
-        "koa-jwt": "^3.6.0",
+        "koa-jwt": "^4.0.4",
         "koa-logger": "^3.2.1",
         "koa-multer": "^1.0.2",
         "koa-router": "^7.4.0",
